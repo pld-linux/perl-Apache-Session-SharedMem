@@ -35,7 +35,7 @@ IPC::Cache (a wiêc IPC::ShareLite).
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-perl -MExtUtils::MakeMaker -wle 'WriteMakefile(NAME=>"Apache::Session::SharedMEM")'
+%{__perl} -MExtUtils::MakeMaker -wle 'WriteMakefile(NAME=>"Apache::Session::SharedMEM")'
 %{__make}
 
 %{!?_without_tests:%{__make} test}
