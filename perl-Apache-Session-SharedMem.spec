@@ -3,8 +3,8 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	Apache
-%define	pnam	Session-SharedMem
+%define		pdir	Apache
+%define		pnam	Session-SharedMem
 Summary:	Apache::Session::Store::SharedMem - store persistent data in shared memory
 Summary(pl):	Apache::Session::Store::SharedMem - przechowywanie trwa³ych dane w pamiêci wspólnej
 Name:		perl-Apache-Session-SharedMem
