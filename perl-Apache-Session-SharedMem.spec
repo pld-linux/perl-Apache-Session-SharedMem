@@ -8,12 +8,12 @@ Summary:	Apache::Session::Store::SharedMem - Store persistent data in shared mem
 Summary(pl):	Apache::Session::Store::SharedMem - Przechowuj trwa³e dane w pamiêci dzielonej
 Name:		perl-Apache-Session-SharedMem
 Version:	0.41
-Release:	1
+Release:	2
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 BuildRequires:	perl >= 5.6
-BuildRequires:	rpm-perlprov >= 3.0.3-26
+BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{?_without_tests:0}%{!?_without_tests:1}
 BuildRequires:	perl-Apache-Session
 BuildRequires:	perl-IPC-Cache
@@ -35,7 +35,8 @@ IPC::Cache (a wiêc IPC::ShareLite).
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} -MExtUtils::MakeMaker -wle 'WriteMakefile(NAME=>"Apache::Session::SharedMEM")'
+%{__perl} -MExtUtils::MakeMaker -wle 'WriteMakefile(NAME=>"Apache::Session::SharedMEM")' \
+	INSTALLDIRS=vendor
 %{__make}
 
 %{!?_without_tests:%{__make} test}
@@ -50,6 +51,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{perl_sitelib}/Apache/Session/*.pm
-%{perl_sitelib}/Apache/Session/Store/*.pm
+%{perl_vendorlib}/Apache/Session/*.pm
+%{perl_vendorlib}/Apache/Session/Store/*.pm
 %{_mandir}/man3/*
