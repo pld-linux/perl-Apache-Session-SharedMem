@@ -5,8 +5,8 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Apache
 %define	pnam	Session-SharedMem
-Summary:	Apache::Session::Store::SharedMem - Store persistent data in shared memory
-Summary(pl):	Apache::Session::Store::SharedMem - Przechowuj trwa³e dane w pamiêci dzielonej
+Summary:	Apache::Session::Store::SharedMem - store persistent data in shared memory
+Summary(pl):	Apache::Session::Store::SharedMem - przechowywanie trwa³ych dane w pamiêci wspólnej
 Name:		perl-Apache-Session-SharedMem
 Version:	0.5
 Release:	1
