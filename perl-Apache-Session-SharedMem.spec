@@ -10,7 +10,8 @@ Summary(pl):	Apache::Session::Store::SharedMem - przechowywanie trwa³ych dane w 
 Name:		perl-Apache-Session-SharedMem
 Version:	0.5
 Release:	1
-License:	GPL/Artistic
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	1649b54fc1839d3b01d7a58da65a7d2e
