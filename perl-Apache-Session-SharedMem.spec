@@ -8,7 +8,7 @@ Summary:	Apache::Session::Store::SharedMem - Store persistent data in shared mem
 Summary(pl):	Apache::Session::Store::SharedMem - Przechowuj trwa³e dane w pamiêci dzielonej
 Name:		perl-Apache-Session-SharedMem
 Version:	0.4
-Release:	1
+Release:	2
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -33,9 +33,11 @@ IPC::Cache (a wiêc IPC::ShareLite).
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
+mv Apache/Session/*.pm lib/Apache/Session/
+rmdir Apache/Session Apache
 
 %build
-perl Makefile.PL
+perl -MExtUtils::MakeMaker -wle 'WriteMakefile(NAME=>"Apache::Session::SharedMEM")'
 %{__make}
 
 %{!?_without_tests:%{__make} test}
@@ -50,5 +52,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%{perl_sitelib}/Apache/Session/*.pm
 %{perl_sitelib}/Apache/Session/Store/*.pm
 %{_mandir}/man3/*
