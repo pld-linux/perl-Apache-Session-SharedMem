@@ -1,21 +1,22 @@
 #
 # Conditional build:
-# _without_tests - do not perform "make test"
+%bcond_without	tests	# do not perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Apache
 %define	pnam	Session-SharedMem
 Summary:	Apache::Session::Store::SharedMem - Store persistent data in shared memory
 Summary(pl):	Apache::Session::Store::SharedMem - Przechowuj trwa³e dane w pamiêci dzielonej
 Name:		perl-Apache-Session-SharedMem
-Version:	0.41
-Release:	2
+Version:	0.5
+Release:	1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	74284d41fb3373d628ddb42fd3ee613b
+# Source0-md5:	1649b54fc1839d3b01d7a58da65a7d2e
 BuildRequires:	perl-devel >= 5.6
 BuildRequires:	rpm-perlprov >= 4.1-13
-%if %{?_without_tests:0}%{!?_without_tests:1}
+%if %{with tests}
 BuildRequires:	perl-Apache-Session
 BuildRequires:	perl-IPC-Cache
 %endif
@@ -40,7 +41,7 @@ IPC::Cache (a wiêc IPC::ShareLite).
 	INSTALLDIRS=vendor
 %{__make}
 
-%{!?_without_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
