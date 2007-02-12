@@ -6,7 +6,7 @@
 %define		pdir	Apache
 %define		pnam	Session-SharedMem
 Summary:	Apache::Session::Store::SharedMem - store persistent data in shared memory
-Summary(pl):	Apache::Session::Store::SharedMem - przechowywanie trwa³ych dane w pamiêci wspólnej
+Summary(pl.UTF-8):   Apache::Session::Store::SharedMem - przechowywanie trwaÅ‚ych dane w pamiÄ™ci wspÃ³lnej
 Name:		perl-Apache-Session-SharedMem
 Version:	0.6
 Release:	1
@@ -29,10 +29,10 @@ This is an Apache::Session extension module that stores the session
 data in Shared memory (so, does exactly what it says on the tin then)
 using IPC::Cache (and hence IPC::ShareLite).
 
-%description -l pl
-To jest rozszerzenie Apache::Session, przechowuj±ce dane sesyjne w pamiêci
-dzielonej (czyli robi dok³adnie to, co ma napisane na puszce), przy u¿yciu
-IPC::Cache (a wiêc IPC::ShareLite).
+%description -l pl.UTF-8
+To jest rozszerzenie Apache::Session, przechowujÄ…ce dane sesyjne w pamiÄ™ci
+dzielonej (czyli robi dokÅ‚adnie to, co ma napisane na puszce), przy uÅ¼yciu
+IPC::Cache (a wiÄ™c IPC::ShareLite).
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
