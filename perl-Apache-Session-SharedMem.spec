@@ -6,7 +6,7 @@
 %define		pdir	Apache
 %define		pnam	Session-SharedMem
 Summary:	Apache::Session::Store::SharedMem - store persistent data in shared memory
-Summary(pl.UTF-8):   Apache::Session::Store::SharedMem - przechowywanie trwałych dane w pamięci wspólnej
+Summary(pl.UTF-8):	Apache::Session::Store::SharedMem - przechowywanie trwałych dane w pamięci wspólnej
 Name:		perl-Apache-Session-SharedMem
 Version:	0.6
 Release:	1
