@@ -9,7 +9,7 @@ Summary:	Apache::Session::Store::SharedMem - store persistent data in shared mem
 Summary(pl.UTF-8):	Apache::Session::Store::SharedMem - przechowywanie trwałych dane w pamięci wspólnej
 Name:		perl-Apache-Session-SharedMem
 Version:	0.6
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
